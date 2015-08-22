@@ -1,11 +1,11 @@
-<h1>Listing planta</h1>
+<font color="#24AAFF"><h1>listar la planta</h1></font>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Picture</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Imagen</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,10 +15,10 @@
       <tr>
         <td><%= plantum.name %></td>
         <td><%= plantum.description %></td>
-        <td><%= plantum.picture %></td>
-        <td><%= link_to 'Show', plantum %></td>
-        <td><%= link_to 'Edit', edit_plantum_path(plantum) %></td>
-        <td><%= link_to 'Destroy', plantum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag(plantum.picture_url, :width => 150, :height=>150) if plantum.picture.present? %></td>
+        <td><%= link_to 'Mostrar', plantum %></td>
+        <td><%= link_to 'Editar', edit_plantum_path(plantum) %></td>
+        <td><%= link_to 'Eliminar', plantum, method: :delete, data: { confirm: 'Esta usted seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Plantum', new_plantum_path %>
+<%= link_to 'nueva planta de Urcuquí', new_plantum_path %>
