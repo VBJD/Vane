@@ -1,0 +1,29 @@
+<h1>Listing planta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planta.each do |plantum| %>
+      <tr>
+        <td><%= plantum.name %></td>
+        <td><%= plantum.description %></td>
+        <td><%= plantum.picture %></td>
+        <td><%= link_to 'Show', plantum %></td>
+        <td><%= link_to 'Edit', edit_plantum_path(plantum) %></td>
+        <td><%= link_to 'Destroy', plantum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plantum', new_plantum_path %>
